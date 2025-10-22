@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign In page</title>
+  <style>
+    /* Simple, self-contained styling inside the HTML document */
+    :root{
+      --bg:#f3f6fb;
+      --card:#ffffff;
+      --accent:#2563eb;
+      --muted:#6b7280;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,var(--bg),#e9f0ff 60%);
+      color:#111827;
+    }
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+    .card{
+      width:100%;
+      max-width:420px;
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 8px 30px rgba(12, 22, 46, 0.08);
+      padding:28px;
+      box-sizing:border-box;
+    }
+    h1{
+      margin:0 0 6px 0;
+      font-size:22px;
+      letter-spacing:-0.2px;
+    }
+    p.lead{
+      margin:0 0 20px 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    form > label{
+      display:block;
+      font-size:13px;
+      margin-bottom:6px;
+      color:#374151;
+    }
+    .field{
+      margin-bottom:14px;
+    }
+    input[type="email"],
+    input[type="password"]{
+      width:100%;
+      padding:10px 12px;
+      border:1px solid #e6e9ef;
+      border-radius:8px;
+      font-size:14px;
+      box-sizing:border-box;
+      outline:none;
+      transition:box-shadow .12s, border-color .12s;
+      background:transparent;
+    }
+    input[type="email"]:focus,
+    input[type="password"]:focus{
+      box-shadow:0 0 0 4px rgba(37,99,235,0.08);
+      border-color:var(--accent);
+    }
+
+    .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .checkbox{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    button[type="submit"]{
+      width:100%;
+      padding:11px 14px;
+      border:0;
+      border-radius:10px;
+      background:var(--accent);
+      color:white;
+      font-weight:600;
+      font-size:15px;
+      cursor:pointer;
+    }
+    button[type="submit"]:active{ transform:translateY(1px); }
+
+    .small{
+      font-size:13px;
+      color:var(--muted);
+      text-align:center;
+      margin-top:16px;
+    }
+
+    .alt{
+      margin-top:16px;
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    a.link{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:500;
+    }
+
+    /* responsive */
+    @media (max-width:440px){
+      .card{ padding:18px; border-radius:10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main class="card" role="main" aria-labelledby="signin-title">
+      <header>
+        <h1 id="signin-title">Sign in to your account</h1>
+        <p class="lead">Welcome back — enter your details to continue.</p>
+      </header>
+
+      <!-- Note: action="#" is placeholder. Replace with your server endpoint when ready. -->
+      <form action="#" method="post" autocomplete="on" novalidate>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required
+                 aria-required="true" autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="••••••••" required
+                 aria-required="true" autocomplete="current-password" minlength="6" />
+        </div>
+
+        <div class="row" style="margin-bottom:6px;">
+          <label class="checkbox">
+            <input type="checkbox" name="remember" aria-label="Remember me" />
+            <span>Remember me</span>
+          </label>
+          <div style="font-size:13px;">
+            <a href="#" class="link">Forgot?</a>
+          </div>
+        </div>
+
+        <div>
+          <button type="submit">Sign in</button>
+        </div>
+      </form>
+
+      <div class="alt">
+        <span class="small">Don't have an account?</span>
+        <a href="#" class="link">Create account</a>
+      </div>
+
+      <p class="small" style="margin-top:14px;">By continuing you agree to our <a href="#" class="link">Terms</a> and <a href="#" class="link">Privacy</a>.</p>
+    </main>
+  </div>
+</body>
+</html>
